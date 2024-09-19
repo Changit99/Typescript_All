@@ -1,0 +1,39 @@
+interface Person {
+    name: string;
+    age: number;
+}
+
+interface Employee {
+    employeeId: number;
+    department: string;
+}
+
+type PersonOrEmployee = Person | Employee;
+
+const person: PersonOrEmployee = { name: "Alice", age: 30 };
+const employee: PersonOrEmployee = { employeeId: 123, department: "HR" };
+
+//intersection
+interface Address {
+    street: string;
+    city: string;
+    country: string;
+}
+
+interface Contact {
+    phone: string;
+    email: string;
+}
+
+type AddressAndContact= Address & Contact
+
+const ContactInfo:AddressAndContact={
+     street: "123 Main St",
+    city: "Anytown",
+    country: "USA",
+    phone: "123-456-7890",
+    email: "example@example.com"
+
+}
+let type=typeof ContactInfo.street
+console.log(type)
